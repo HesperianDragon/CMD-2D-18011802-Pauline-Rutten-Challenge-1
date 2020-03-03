@@ -1,22 +1,8 @@
-// const progressBar = document.getElementsByClassName
-// ('progress-bar')[0]
-// setInterval(() => {
-//     const computedStyle = getComputedStyle(progressBar)
-//     const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0
-//         progressBar.style.setProperty('--width', width + .1)
-// },5)
-
- // var gauge4 = new Gauge("canvas4", {
-    //     'mode': 'needle',
-    //     'range': {
-    //         'min': 0,
-    //         'max': 90
-    //     }
-    // });
-
+// Function(s) start when page is loaded
 window.onload = function() {
     this.getDate()
     this.getSpeed()
+    this.getStockValues()
 }
 
 function getDate() {
@@ -28,15 +14,17 @@ function getDate() {
     }, 3000)
 }
 
+// Get year, month, day,hour and minutes 
 function updateDate() {
     var monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
     var d = new Date();
-    document.getElementById('month').innerHTML = monthNames[d.getMonth()] + ' ' + d.getFullYear();
+    document.getElementById('month').innerHTML =  monthNames[d.getMonth()] + ' ' + d.getDay() + ' ' + d.getFullYear();
     // Shows current hour and minutes
     document.getElementById('time').innerHTML = d.getHours() + ':' + ('0'+ d.getMinutes()).slice(-2);;
 }
 
+// Speed item
 function getSpeed() {
     var speedKmPerHour = 0;
     let options = {
@@ -68,5 +56,26 @@ function getSpeed() {
         gauge.set(speedKmPerHour); // set actual value
         this.document.querySelector("#speed").innerHTML = speedKmPerHour + " km/u"
     }, 500)
+}
+
+// Progress bars
+function getStockValues() {
+    let foodStock = 0
+    let waterStock = 0
+    let fuel = 0;
+
+    let foodElement = document.querySelector('#foodbar').style
+    let waterElement = document.querySelector('#waterbar').style
+    let fuelElement = document.querySelector('#fuelbar').style
+
+    setInterval(function() {
+        foodStock = Math.floor(Math.random() * 100 + 1)
+        waterStock = Math.floor(Math.random() * 100 + 1)
+        fuel = Math.floor(Math.random() * 100 + 1)
+
+        foodElement.setProperty('--width', foodStock)
+        waterElement.setProperty('--width', waterStock)
+        fuelElement.setProperty('--width', fuel)
+    }, 1000)
 }
 

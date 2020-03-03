@@ -1,4 +1,4 @@
-
+/* General specifications website*/
 body{
     font-family: 'Kanit', sans-serif;
     margin: 0px;
@@ -6,24 +6,31 @@ body{
     font-size: 13px;
 }
 
+/* General heading styling */
 h1, h2, h3, h4, h5{
     font-family: montserrat;
     margin: 7px 0px 7px 0px;
 }
+
+/* Paragraph styling */
 p{
     margin: 7px 0px 7px 0px;
 }
+
+/* Header website */
 header{
     width: 100%;
     background-color: black;
     height: 80px;
 }
 
+/* Logo SpaceX */
 .logo{
     max-width: 200px;
     padding: 10px 10px 10px 10px;
 }
 
+/* Styling section, centering, top */
 section{
     margin: auto;
     top: 30px;
@@ -33,6 +40,7 @@ section{
     padding: 10px;  
 }
 
+/* Items backgrounds and other specifications */
 .card{
     margin: 10px 0px 10px 0px;
     padding: 10px;
@@ -49,6 +57,7 @@ section{
     box-shadow:0 2px 5px 0 rgba(0,0,0,0.25)
 }
 
+/* Time/month box specificaties */
 .date{
     top: -72px;
     margin-left: auto;
@@ -60,28 +69,23 @@ section{
     position: absolute;
 }
 
+/* Position items */
 .date-inner-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#month{
-    display:inline-block;
-}
-
-#time{
-    display: inline-block;
-}
-
+/* Vertical line */
 .vl{
-  border-left: 1.5px solid rgb(189, 32, 32);
+  border-left: 1.5px solid rgb(189, 189, 189);
   z-index: 2;
   position: relative;
   margin: 0px 10px 0px 10px;
   height: 35px;
 }
 
+/* Progress bar base */
 .progress-bar {
     position: relative;
     width: 100%;
@@ -91,6 +95,7 @@ section{
     color: white;
 }
 
+/* Progress bar color bar */
 .progress-bar::before{
     content: attr(data-label);
     display: flex;
@@ -103,59 +108,138 @@ section{
     border-radius: 1em;
 }
 
-
+/* Color progressbar food */
 .food::before{
   background: #1D976C;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
+/* Color progressbar water */
 .water::before{
   background: #00B4DB;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
 }
 
+/* Color progressbar Fuel */
 .fuel::before{
   background: #FDC830;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/***************************
+Timeline
+***************************/
+  @media (min-width:240px){    
+span {
+  font-size: 1.1em;
+  font-weight: 300;
+  display: block;
+  text-align: center;
+}
+
+/* Timeline line */
+.timeline ul{
+  padding: 1px 0px 0px 1px;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+.timeline ul::before {
+  content: ' ';
+  height: 100%;
+  width: 0.2em;
+  background-color: rgb(199, 199, 199);
+  position: absolute;
+  top: 0;
+  left: 0.5em;
+  z-index: 1;
+}
+
+li div{
+  display: inline-block;
+  margin: 1em 0;
+  vertical-align: top;
+}
+
+/* Cirkel(s) timeline */
+.bullet {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: white;
+  z-index: 2;
+  margin-right: 1em;
+  border:2px solid #ff0000;
+}
+
+/* Finishes event */
+.finished-bullet{
+  border: 2px solid green;
+}
+
+/* style time information */
+.time {
+  width: 20%;
+  font-size: 0.75em;
+  padding-top: 0.25em;
+}
+
+/* Style heading information */
+.shedule h4 {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Style heading information */
+.shedule h5 {
+  margin: 0;
+  font-size: 0.7em;
+  font-weight: 400;
+  color: grey;
+}
 
 }
-    
+
+
 /***************************
 TABLET SIZE 
 ***************************/
 @media (min-width:600px){
-    header{
-        height: 50px;
-    }
+    
     .container-progress{
         display: flex;
         flex-wrap: wrap;
     }
-    .card{
-        margin-right: 10px;
-    }
+  
     .progress-card{
         max-width: 206px;
+        margin-right:10px;
     }
     .speed-card{
         max-width: 206px;
     }
 }
 
+/* Query for Time/Month card */
 @media (min-width: 767px){
-    section{
-        top:0px;
+  header{
+    height: 50px;
+}
+
+  section{
+        top: 30px;
     }
     .date{
         left: initial;
         margin: 10px;
-        top: 0px;
+        top: -29px;
     }
 }
 
@@ -163,82 +247,15 @@ TABLET SIZE
 SMALL DESKTOP SIZE
 ***************************/
 @media (min-width: 1028px){
-    
+    /* Logo does not go al the way left for big screen users */
     nav{
         max-width: 1028px;
         margin: auto;
     }
+
+    /**/
     section{
         max-width: 1028px;
         margin: auto;
     }
-
-    /* TIMELINE */
-    
-    
-      span {
-        font-size: 1.1em;
-        font-weight: 300;
-        display: block;
-        text-align: center;
-      }
-    }
-    
-    .timeline ul{
-        padding: 1px 0px 0px 1px;
-        margin: 0;
-        list-style: none;
-        position: relative;
-    }
-    
-    .timeline ul::before {
-        content: ' ';
-        height: 100%;
-        width: 0.2em;
-        background-color: rgb(199, 199, 199);
-        position: absolute;
-        top: 0;
-        left: 0.5em;
-        z-index: 1;
-      }
-      
-      li div{
-        display: inline-block;
-        margin: 1em 0;
-        vertical-align: top;
-      }
-      
-      .bullet {
-        position: relative;
-        width: 1em;
-        height: 1em;
-        box-sizing: border-box;
-        border-radius: 50%;
-        background: white;
-        z-index: 2;
-        margin-right: 1em;
-        border:2px solid #005288;
-      }
-
-      .time {
-        width: 20%;
-        font-size: 0.75em;
-        padding-top: 0.25em;
-      }
-             
-      h3 {
-        font-size: 0.9em;
-        font-weight: 400;
-        margin: 0;
-      }
-      
-      h4 {
-        margin: 0;
-        font-size: 0.7em;
-        font-weight: 400;
-        color: grey;
-      }
-
-    
-
-
+  }

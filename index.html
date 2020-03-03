@@ -28,28 +28,28 @@
     </article>
     <article class="card shedule">
       <div class="timeline">
+        <h3>Shedule</h3>
         <ul>
           <li>
-            <div class="bullet"></div>
-            <div class="time">NOG AANPASSEN</div>
+            <div class="bullet finished-bullet"></div>
+            <div class="time">March 4 2020</div>
             <div class="desc">
-              <h3>Arrival travelers</h3>
-              <h4>Total: 200 people</h4>
+              <h4>Arrival travelers</h4>
+              <h5>Total: 200 people</h5>
+            </div>
+          </li>
+          <li>
+            <div class="bullet finished-bullet"></div>
+            <div class="time">March 4 2020</div>
+            <div class="desc">
+              <h4>Takeoff spacerocket</h4>
             </div>
           </li>
           <li>
             <div class="bullet"></div>
-            <div class="time">3 - 4pm</div>
+            <div class="time">June 4 2020</div>
             <div class="desc">
-              <h3>Takeoff spacerocket</h3>
-              <h4></h4>
-            </div>
-          </li>
-          <li>
-            <div class="bullet"></div>
-            <div class="time">12pm</div>
-            <div class="desc">
-              <h3>Arrival Mars</h3>
+              <h4>Arrival Mars</h4>
             </div>
           </li>
         </ul>
@@ -58,28 +58,29 @@
     <div class="container-progress">
       <article class="card progress-card">
         <h3>Food</h3>
-        <div class="progress-bar food" style="--width: 56" data-label="Food">
+        <div class="progress-bar food" id="foodbar" style="--width: 56" data-label="Food">
         </div>
         <p>Change: -1%</p>
       </article>
       <article class="card progress-card">
         <h3>Water</h3>
-        <div class="progress-bar water" style="--width: 75" data-label="Water">
+        <div class="progress-bar water" id="waterbar" style="--width: 75" data-label="Water">
         </div>
         <p>Change: -1%</p>
       </article>
       <article class="card progress-card">
         <h3>Fuel</h3>
-        <div class="progress-bar fuel" style="--width: 69" data-label="Fuel">
+        <div class="progress-bar fuel" id="fuelbar" style="--width: 69" data-label="Fuel">
         </div>
         <p>Change: -1%</p>
       </article>
+      <article class="card speed-card">
+        <h3>Speed</h3>
+        <br>
+        <canvas id="speedGauge"></canvas>
+        <p id="speed">0 km/u</p>
+      </article>
     </div>
-    <article class="card speed-card">
-      <h3>Speed</h3>
-      <canvas id="speedGauge"></canvas>
-      <p id="speed">0 km/u</p>
-    </article>
   </section>
 </body>
 
